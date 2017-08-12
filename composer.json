@@ -1,0 +1,28 @@
+{
+    "name": "elliot-sawyer/nzstreets",
+    "type": "silverstripe-module",
+    "description": "Database of New Zealand street addresses using LINZ address data",
+    "homepage": "http://silverstripe.org",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "silverstripe",
+        "new zealand",
+        "nz",
+        "address",
+        "lookup",
+        "geocode"
+    ],
+    "authors": [
+        {
+            "name": "elliot sawyer",
+            "email": "me@sawyer.nz"
+        }
+    ],
+    "require": {
+        "silverstripe/framework": "^3.6"
+    },
+    "suggest": {
+        "silverstripe/cms": "Allows you to easily edit file permissions in the CMS"
+    },
+    "extra": []
+}
