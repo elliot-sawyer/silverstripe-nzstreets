@@ -1,9 +1,14 @@
 <?php
+namespace ElliotSawyer\NZStreets;
+
+use SilverStripe\ORM\DataObject;
+use SilverStripe\Forms\TextField;
 class NZStreetAddress extends DataObject {
-    
+    private static $table_name = 'NZStreetAddress';
+
     private static $singular_name = 'NZ Street Address';
     private static $plural_name = 'NZ Street Addresses';
-    
+
     //column lengths were determined by importing the entire set and finding the longest column
     // select max(length(COLUMNNAME)) from NZStreetAddress
     private static $db = [
@@ -39,7 +44,7 @@ class NZStreetAddress extends DataObject {
     // limiting searches from the first character should speed this up.
     private static $searchable_fields = [
        'FullAddress' => [
-          'field' => 'TextField',
+          'field' => TextField::class,
           'filter' => 'StartsWithFilter'
        ]
     ];
@@ -48,16 +53,16 @@ class NZStreetAddress extends DataObject {
         // adding an index to full address should speed searches up considerably
         'FullAddressIndex' => [
             'type' => 'index',
-            'value' => 'unique("FullAddress")'
+            'columns' => ["FullAddress"]
         ],
         // @todo: reverse geocoding, resolve coordinate to an address
         'LatitudeIndex' => [
             'type' => 'index',
-            'value' => '"Latitude"'
+            'columns' => ["Latitude"]
         ],
         'LongitudeIndex' => [
             'type' => 'index',
-            'value' => '"Longitude"'
+            'columns' => ["Longitude"]
         ],
     ];
 }

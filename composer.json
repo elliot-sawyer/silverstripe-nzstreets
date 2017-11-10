@@ -19,7 +19,7 @@
         }
     ],
     "require": {
-        "silverstripe/framework": "^3.6"
+        "silverstripe/framework": "^4.0"
     },
     "suggest": {
         "silverstripe/cms": "Allows you to easily edit file permissions in the CMS"
