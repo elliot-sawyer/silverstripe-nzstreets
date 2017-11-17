@@ -1,4 +1,7 @@
 <?php
+namespace ElliotSawyer\NZStreets;
+use SilverStripe\Dev\CsvBulkLoader;
+
 class NZStreetAddressCSVImporter extends CsvBulkLoader {
     public function __construct($objectClass) {
         //@todo: should just remove the limit entirely
