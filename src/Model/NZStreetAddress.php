@@ -50,7 +50,6 @@ class NZStreetAddress extends DataObject {
     ];
 
     private static $indexes = [
-        // adding an index to full address should speed searches up considerably
         'FullAddressIndex' => [
             'type' => 'index',
             'columns' => ["FullAddress"]
@@ -64,5 +63,10 @@ class NZStreetAddress extends DataObject {
             'type' => 'index',
             'columns' => ["Longitude"]
         ],
+        'AddressID' => [
+            'type' => 'index',
+            'columns' => ["AddressID"]
+        ],
     ];
+
 }
