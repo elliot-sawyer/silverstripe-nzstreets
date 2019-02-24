@@ -33,7 +33,7 @@ Create a new route in routes.yml. You can change `address` to any url_segment th
 ```
 SilverStripe\Control\Director:
   rules:
-    'address//$Action/$ID/$Name': 'ElliotSawyer\NZStreets\AddressController' 
+    'address//$Action/$ID/$Name': 'ElliotSawyer\NZStreets\NZStreetAddressController' 
 ```
 
 Download the CSV data source from https://data.linz.govt.nz/layer/3353-nz-street-address/data/
