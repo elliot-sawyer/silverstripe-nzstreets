@@ -24,7 +24,7 @@ class NZStreetAddressController extends Controller {
     //set content type
     public function init() {
         parent::init();
-        $this->request->addHeader('Content-Type', $this->config()->content_type);
+        $this->response->addHeader('Content-Type', $this->config()->content_type);
     }
 
     /**
