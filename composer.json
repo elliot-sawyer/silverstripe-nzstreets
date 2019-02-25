@@ -1,6 +1,6 @@
 {
     "name": "elliotsawyer/nzstreets",
-    "type": "silverstripe-module",
+    "type": "silverstripe-vendormodule",
     "description": "Database of New Zealand street addresses using LINZ address data",
     "homepage": "http://silverstripe.org",
     "license": "BSD-3-Clause",
