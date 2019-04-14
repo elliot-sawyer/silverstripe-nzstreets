@@ -58,6 +58,21 @@ ElliotSawyer\NZStreets\NZStreetAddressController:
 Each search result contains an AddressID. For more details about an address, you can query by that ID:
 * http://yoursite/address/details?AddressID=1579100
 
+Sideloading
+-----------
+
+Build the table using the dev/build command. You can sideload the CSV file into MySQL with the following query:
+```sql
+LOAD DATA LOCAL INFILE '/path/to/your/nz-street-address.csv'
+INTO TABLE NZStreetAddress
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"' 
+LINES TERMINATED BY '\r\n'
+IGNORE 1 LINES
+(WKT,AddressID,ChangeID,AddressType,UnitValue,AddressNumber,AddressNumberSuffix,AddressNumberHigh,WaterRouteName,WaterName,SuburbLocality,TownCity,FullAddressNumber,FullRoadName,FullAddress,RoadSectionID,Longitude,Latitude,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,ShapeX,ShapeY)
+SET ClassName="ElliotSawyer\\NZStreets\\NZStreetAddress", LastEdited=NOW(), Created=NOW();
+```
+
 Contributing
 ------------
 
