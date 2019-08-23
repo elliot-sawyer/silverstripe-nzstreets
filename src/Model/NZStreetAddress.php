@@ -22,7 +22,7 @@ class NZStreetAddress extends DataObject {
         'TownCity' => 'Varchar(25)',
         'FullAddressNumber' => 'Varchar(18)',
         'FullRoadName' => 'Varchar(33)',
-        'FullAddress' => 'Varchar(66)',
+        'FullAddress' => 'Varchar(80)',
         'Longitude' => 'Float',
         'Latitude' => 'Float',
         'ShapeX' => 'Float',
