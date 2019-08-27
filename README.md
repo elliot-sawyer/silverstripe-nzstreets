@@ -77,3 +77,11 @@ Contributing
 ------------
 
 Contributions are more than welcome! Please raise some issues or create pull requests on the Github repo.
+
+Support
+--------
+Need some extra help or just love my work? Consider shouting me a coffee or a small donation if this module helped you solve a problem. I accept cryptocurrency at the following addresses:
+* Bitcoin: 12gSxkqVNr9QMLQMMJdWemBaRRNPghmS3p
+* Bitcoin Cash: 1QETPtssFRM981TGjVg74uUX8kShcA44ni
+* Litecoin: LbyhaTESx3uQvwwd9So4sGSpi4tTJLKBdz
+* Ethereum: 0x0694E0704c70D8d178dd2e9522FC59EBBEe86748

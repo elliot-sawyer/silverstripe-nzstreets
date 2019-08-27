@@ -14,8 +14,7 @@
     ],
     "authors": [
         {
-            "name": "elliot sawyer",
-            "email": "elliot@cryptopay.nz"
+            "name": "elliot sawyer"
         }
     ],
     "require": {
