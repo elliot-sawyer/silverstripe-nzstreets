@@ -8,6 +8,7 @@ class NZStreetAddress extends DataObject {
 
     private static $singular_name = 'NZ Street Address';
     private static $plural_name = 'NZ Street Addresses';
+    private static $default_sort = 'FullAddress ASC';
 
     //column lengths were determined by importing the entire set and finding the longest column
     // select max(length(COLUMNNAME)) from NZStreetAddress
@@ -34,10 +35,22 @@ class NZStreetAddress extends DataObject {
         'RoadSectionID' => 'Int',
     ];
 
+    private static $has_one = [
+        'WaterName' => NZWaterName::class,
+        'WaterRouteName' => NZWaterRouteName::class
+    ];
+
+    private static $belongs_many_many = [
+        'Streets' => NZFullRoadName::class
+    ];
+
     private static $summary_fields = [
         'FullAddress' => 'Full address',
         'Latitude' => 'Latitude',
-        'Longitude' => 'Longitude'
+        'Longitude' => 'Longitude',
+        'Streets.Title' => 'Road',
+        'Streets.SuburbLocality.Title' => 'Suburb',
+        'Streets.SuburbLocality.TownCity.Title' => 'City'
     ];
 
     // @todo: intent is to optimise searching by address
