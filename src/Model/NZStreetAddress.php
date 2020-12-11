@@ -36,21 +36,14 @@ class NZStreetAddress extends DataObject {
     ];
 
     private static $has_one = [
-        'WaterName' => NZWaterName::class,
-        'WaterRouteName' => NZWaterRouteName::class
-    ];
-
-    private static $belongs_many_many = [
-        'Streets' => NZFullRoadName::class
+        'City' => NZTownCity::class,
+        'Suburb' => NZSuburbLocality::class
     ];
 
     private static $summary_fields = [
         'FullAddress' => 'Full address',
         'Latitude' => 'Latitude',
         'Longitude' => 'Longitude',
-        'Streets.Title' => 'Road',
-        'Streets.SuburbLocality.Title' => 'Suburb',
-        'Streets.SuburbLocality.TownCity.Title' => 'City'
     ];
 
     // @todo: intent is to optimise searching by address

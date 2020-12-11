@@ -7,7 +7,6 @@ class NZStreetAddressAdmin extends ModelAdmin {
     private static $managed_models = [
         NZTownCity::class,
         NZSuburbLocality::class,
-        NZFullRoadName::class,
         NZStreetAddress::class
     ];
 

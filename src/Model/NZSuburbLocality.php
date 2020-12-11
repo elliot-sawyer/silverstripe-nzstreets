@@ -1,6 +1,8 @@
 <?php
 namespace ElliotSawyer\NZStreets;
 
+use SilverStripe\Forms\GridField\GridField;
+use SilverStripe\Forms\GridField\GridFieldConfig_RecordViewer;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\Forms\TextField;
 class NZSuburbLocality extends DataObject {
@@ -15,11 +17,7 @@ class NZSuburbLocality extends DataObject {
         'Num' => 'Int'
     ];
 
-    private static $many_many = [
-        'Streets' => NZFullRoadName::class
-    ];
-
-    private static $belongs_many_many = [
+    private static $has_one = [
         'TownCity' => NZTownCity::class
     ];
 
@@ -33,4 +31,27 @@ class NZSuburbLocality extends DataObject {
     private static $summary_fields = [
         'Title' => 'Name',
     ];
+
+    public function getCMSFields()
+    {
+        $fields = parent::getCMSFields();
+        $fields->addFieldToTab(
+            'Root.Addresses',
+            GridField::create(
+                'Addresses',
+                'Addresses',
+                $this->getAddresses(),
+                GridFieldConfig_RecordViewer::create()
+            )
+        );
+        return $fields;
+    }
+
+    public function getAddresses()
+    {
+        return NZStreetAddress::get()->filter([
+            'CityID' => $this->TownCityID,
+            'SuburbID' => $this->ID
+        ]);
+    }
 }

@@ -22,7 +22,7 @@ class NZTownCity extends DataObject {
         'Num' => 'Int'
     ];
 
-    private static $many_many = [
+    private static $has_many = [
         'Suburbs' => NZSuburbLocality::class
     ];
 
