@@ -26,6 +26,10 @@ class NZTownCity extends DataObject {
         'Suburbs' => NZSuburbLocality::class
     ];
 
+    private static $has_one = [
+        'Region' => NZRegion::class
+    ];
+
     private static $summary_fields = [
         'Title' => 'Name',
         // 'Addresses.Count' => 'Addresses'
