@@ -1,7 +1,7 @@
 NZ Street Address module for SilverStripe
 =========================================
 
-Address lookup using LIMS Address Data.
+Address lookup using LINZ Address Data.
 
 Use the 0.0.x tags for SilverStripe 3 installations.  SilverStripe 4 support will be handled from versions 0.1.x.
 
