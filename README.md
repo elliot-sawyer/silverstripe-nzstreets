@@ -72,6 +72,13 @@ IGNORE 1 LINES
 (WKT,AddressID,ChangeID,AddressType,UnitValue,AddressNumber,AddressNumberSuffix,AddressNumberHigh,WaterRouteName,WaterName,SuburbLocality,TownCity,FullAddressNumber,FullRoadName,FullAddress,RoadSectionID,Longitude,Latitude,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,ShapeX,ShapeY)
 SET ClassName="ElliotSawyer\\NZStreets\\NZStreetAddress", LastEdited=NOW(), Created=NOW();
 ```
+Newer versions of MySQL treat this process as a security risk, so you might need to enable a few things on the server and the client to make it happen.  Consider reverting these changes after the sideloading process is completed;
+
+Within MySQL at the database level (must be root)
+`SET GLOBAL local_infile=1;`
+
+Exit out of MySQL and reconnect with a flag on your client:
+`mysql -u root -p --local-infile=1`
 
 Contributing
 ------------
